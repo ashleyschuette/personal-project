@@ -31,7 +31,7 @@ export default class CreateCustomer extends Component {
 
     firstNameonChange(event) {
         this.setState({
-            firstName: event.target.value
+            firstName: event.target.value,
         })
     }
 
@@ -78,7 +78,6 @@ export default class CreateCustomer extends Component {
     }
 
     onSave() {
-        console.log(this.state.firstName)
         axios.post('/api/createcustomer', {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -91,6 +90,17 @@ export default class CreateCustomer extends Component {
         })
             .then((response) => console.log(response))
             .catch(err => console.log(err));
+        
+        this.setState({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            address: '',
+            city: '',
+            state: '',
+            zipcode: ''
+        })
     }
 
 
@@ -102,15 +112,15 @@ export default class CreateCustomer extends Component {
             </nav>
             <h1> Create New Customer </h1>
             <h3>Name</h3>
-            <input onChange={this.firstNameonChange} placeholder="FIRST NAME" />
-            <input onChange={this.lastNameonChange} placeholder="LAST NAME" />
-            <input onChange={this.emailonChange} placeholder="EMAIL" />
-            <input onChange={this.phoneonChange} placeholder="PHONE" />
+            <input onChange={this.firstNameonChange} value={this.state.firstName} placeholder="FIRST NAME" />
+            <input onChange={this.lastNameonChange} value={this.state.lastName} placeholder="LAST NAME" />
+            <input onChange={this.emailonChange} value={this.state.email} placeholder="EMAIL" />
+            <input onChange={this.phoneonChange} value={this.state.phone} placeholder="PHONE" />
             <h3>Address</h3>
-            <input onChange={this.addressonChange} placeholder="STREET" />
-            <input onChange={this.cityonChange} placeholder="CITY" />
-            <input onChange={this.stateonChange} placeholder="STATE" />
-            <input onChange={this.zipcodeonChange} placeholder="ZIP CODE" />
+            <input onChange={this.addressonChange} value={this.state.address} placeholder="STREET" />
+            <input onChange={this.cityonChange} value={this.state.city} placeholder="CITY" />
+            <input onChange={this.stateonChange} value={this.state.state} placeholder="STATE" />
+            <input onChange={this.zipcodeonChange} value={this.state.zipcode} placeholder="ZIP CODE" />
             <button onClick={this.onSave}>SAVE</button>    
             </div>  
         )

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AdminNAV from './AdminNAV';
 import axios from 'axios';
 import InvoiceCard from './InvoiceCard';
+import { Link } from 'react-router-dom';
 
 export default class CustomerInvoice extends Component {
     constructor(props) {
@@ -41,6 +42,11 @@ export default class CustomerInvoice extends Component {
                                 quantity={customer.quantity}
                                 total={customer.total} />
                         })}
+                    </div>
+                     <div>
+                    <Link to={'/createinvoice/2'}>
+                    <button>Add</button>
+                    </Link>
                     </div>
                  </div> 
             )

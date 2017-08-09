@@ -72,6 +72,8 @@ app.get('/api/customer', customerController.getCustomer)
 app.get('/api/customer/:id', customerController.getCustomerInvoice)
 // Creating a new customer
 app.post('/api/createcustomer', customerController.postNewCustomer)
+// Creating new invoice for a specific customer
+app.post('/api/createinvoice/:id', customerController.postNewInvoice)
     
 
     // app.put('/api/product/:id', products_controller.update);

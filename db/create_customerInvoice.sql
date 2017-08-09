@@ -1,0 +1,2 @@
+insert into invoice (customerid, work_type, furniture_type, quantity, labor_cost, supplies_cost, foam_cost, fabric_cost, fabric_brand, fabric_pattern, fabric_color, yards, notes, creation_date)
+values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
