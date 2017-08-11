@@ -4,7 +4,7 @@
 //    align-items: $align;
 // }
 
-// @mixin width-height($width, $height) {
-//    width: $width;
-//    height: $height;
-// }
+@mixin width-height($width, $height) {
+   width: $width;
+   height: $height;
+}

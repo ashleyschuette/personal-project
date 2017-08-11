@@ -65,8 +65,11 @@ app.get('/me', function (req, res) {
 
 // app.get('/api/user', customerController.getUser);
 
-//Get Customers for Search in Admin View
+
 const customerController = require('./controllers/customerController');
+// Get all customers on load
+app.get('/api/customers', customerController.getAllCustomers)
+//Get Customers for Search in Admin View
 app.get('/api/customer', customerController.getCustomer)
 // Get specific customer invoice by id
 app.get('/api/customer/:id', customerController.getCustomerInvoice)
@@ -74,14 +77,20 @@ app.get('/api/customer/:id', customerController.getCustomerInvoice)
 app.post('/api/createcustomer', customerController.postNewCustomer)
 // Creating new invoice for a specific customer
 app.post('/api/createinvoice/:id', customerController.postNewInvoice)
-    
 
-    // app.put('/api/product/:id', products_controller.update);
-    // app.post('/api/product', products_controller.create);
-    // app.delete('/api/product/:id', products_controller.delete);
+
+//Get user specific invoices
+const userController = require('./controllers/userController');
+app.get('/api/invoices/:id', userController.getUserInvoices)
     
     
     
 app.listen(3001, () => {
     console.log('Listening on port 3001');
-    })
+})
+
+
+// examples
+    // app.put('/api/product/:id', products_controller.update);
+    // app.post('/api/product', products_controller.create);
+    // app.delete('/api/product/:id', products_controller.delete);

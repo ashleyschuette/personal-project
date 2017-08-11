@@ -1,0 +1,68 @@
+.adminNAV {
+    @include width-height(18%, 100vh);
+    background: $darkgray;
+
+
+    h1 {
+        color: #fff;
+        font-family: $playfair;
+        font-size: 27px;
+        padding: 15px 0px 0px 20px;
+    }
+
+    .your-account {
+        @include width-height(100%, 40px);
+        border: 1px solid #fff;
+        background: #505050;
+        margin-top: 20px;
+
+        h2 {
+            color: #fff;
+            font-family: $nunito;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding-left: 20px;
+        }
+    }
+
+    .customers-link {
+        @include width-height(100%, 40px);
+        padding: 1px 0px 1px;
+        background: $teal;
+
+        img {
+            margin: 20px;
+        }
+    }
+
+    .customers-link:hover {
+        background: $teal;
+    }
+
+    .invoices-link {
+        @include width-height(100%, 40px);
+        padding: 1px 0px 1px;
+
+        img {
+            margin: 20px;
+        }
+
+    }
+
+    .invoices-link:hover {
+        background: $teal;
+    }
+
+    div {
+        font-family: $nunito;
+        font-size: 15px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+    }
+
+    a {
+        color: #fff;
+    }
+
+}

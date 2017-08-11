@@ -1,0 +1,76 @@
+.customers-component {
+    display: flex;
+
+    .component-content {
+        @include width-height(100%, 100vh);
+    }
+
+    .component-header {
+        @include width-height(100%, 48px);
+        color: $darkgray;
+        font-size: 27px;
+        text-transform: uppercase;
+        font-family: $nunito;
+        font-weight: bolder;
+        padding: 15px 0px 0px 20px;
+        background: rgba(255, 255, 255, .5)
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    input {
+        @include width-height(50%, 30px);
+        font-size: 15px;
+        background-color: transparent;
+        border: 0px solid;
+        border-bottom: 1px solid $darkgray;
+        outline: none;
+        margin-left: 10px;
+    }
+
+    ::placeholder {
+            font-family: $nunito;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: $darkgray;
+        }
+
+    .customer-card {
+        @include width-height(325px, 250px);
+        border: 1.5px solid $darkgray;
+        margin: 40px;
+        background: rgba(255, 255, 255, .4);
+    }
+
+    .add-button {
+        @include width-height(70px, 70px);
+        background: $teal;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0px 20px 20px 0px;
+
+        button {
+            @include width-height(100%, 70px);
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 70px;
+            outline: none;
+
+            img {
+                padding-bottom: 15px;
+            }
+        }
+    }
+
+    .add-button:hover {
+            background: $darkgray;
+        }
+
+}

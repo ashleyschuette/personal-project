@@ -4,15 +4,18 @@ import { Link } from 'react-router-dom';
 export default class AdminNAV extends Component {
     render() {
         return (
-            <div>
+            <div className="adminNAV">
                 <h1> Excel Interiors </h1>
-                <h2> Your Account </h2>
-                <Link to={'/customers'}> Customers </Link>
-                <Link to={'/invoices'}> Invoices </Link>
-            </div>    
+                <div className="your-account"><h2> Your Account </h2></div>
+                <div className="customers-link">
+                    <img src={require('../../media/avatar.svg')} />
+                    <Link to={'/customers'}> Customers </Link>
+                </div>
+                <div className="invoices-link">
+                    <img src={require('../../media/invoice.svg')} />
+                    <Link to={'/invoices'}> Invoices </Link>
+                </div>
+            </div>  
         )
     }
 }
-
-// <link to={'path'}>NAME OF LINK</Link>
-// import {Link} from 'react-router-dom'

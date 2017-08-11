@@ -19,6 +19,12 @@ export default class Customers extends Component {
 
     }
 
+    componentDidMount() {
+        axios.get('/api/customers')
+            .then((customers) => this.setState({ customers: customers.data }))
+            .catch(err => console.log(err));
+    }
+
     handleChange(event) {
         this.setState({
             searchTerm: event.target.value
@@ -37,13 +43,19 @@ export default class Customers extends Component {
         
     render() {
 
+        const customers = this.state.customers.map((customer, index) => {
+      return (
+        <Card key={index} customers={customer} />
+      )
+    })
+
         return (
-            <div>
-                <nav>
-                    <AdminNAV />
-                </nav>
-                <h1> Customers </h1>
+            <div className="customers-component">
+                <AdminNAV />
+                <div className="component-content">
+                <div className="component-header"><h1> Customers </h1></div>
                 <form onSubmit={this.onSearchSubmit}>
+                    <img src={require('../../media/search.svg')} />  
                 <input
                     type="text"
                     placeholder="Search"
@@ -51,20 +63,26 @@ export default class Customers extends Component {
                     onChange={this.handleChange}
                     />
                 </form>
-                <div>
+                <div className="customer-card">
                     {this.state.customers.map((customer, index) => {
-                        return <Card key={index}   
-                            id={customer.id}    
-                            firstName={customer.first_name}
-                            lastName={customer.last_name}
-                            phone={customer.phone}
-                            email={customer.email}
-                            address={customer.address + customer.city + customer.state + customer.zipcode} />
-                    })}
-                    <div>
+                            return <Card key={index}
+                                id={customer.id}
+                                firstName={customer.first_name}
+                                lastName={customer.last_name}
+                                phone={customer.phone}
+                                email={customer.email}
+                                address={customer.address}
+                                location={customer.city + ',' + ' ' + customer.state + ' ' + customer.zipcode}
+                        />
+                        })}
+                    {customers}    
+                    <div className="add-button">
                     <Link to={'/createcustomer'}>
-                    <button>Add</button>
+                    <button>
+                        <img src={require('../../media/add.svg')} />            
+                    </button>
                     </Link>
+                    </div>        
                     </div>
                 </div>
             </div>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Nunito:200");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -39,3 +41,155 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+body {
+  background-image: url("../media/backgroundimage.jpg");
+  background-position: top; }
+
+a {
+  text-decoration: none; }
+
+.adminNAV {
+  width: 18%;
+  height: 100vh;
+  background: #2f2e2e; }
+  .adminNAV h1 {
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    padding: 15px 0px 0px 20px; }
+  .adminNAV .your-account {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #fff;
+    background: #505050;
+    margin-top: 20px; }
+    .adminNAV .your-account h2 {
+      color: #fff;
+      font-family: "Nunito", sans-serif;
+      font-size: 18px;
+      text-transform: uppercase;
+      padding-left: 20px; }
+  .adminNAV .customers-link {
+    width: 100%;
+    height: 40px;
+    padding: 1px 0px 1px;
+    background: #33bdb3; }
+    .adminNAV .customers-link img {
+      margin: 20px; }
+  .adminNAV .customers-link:hover {
+    background: #33bdb3; }
+  .adminNAV .invoices-link {
+    width: 100%;
+    height: 40px;
+    padding: 1px 0px 1px; }
+    .adminNAV .invoices-link img {
+      margin: 20px; }
+  .adminNAV .invoices-link:hover {
+    background: #33bdb3; }
+  .adminNAV div {
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center; }
+  .adminNAV a {
+    color: #fff; }
+
+.customers-component {
+  display: flex; }
+  .customers-component .component-content {
+    width: 100%;
+    height: 100vh; }
+  .customers-component .component-header {
+    width: 100%;
+    height: 48px;
+    color: #2f2e2e;
+    font-size: 27px;
+    text-transform: uppercase;
+    font-family: "Nunito", sans-serif;
+    font-weight: bolder;
+    padding: 15px 0px 0px 20px;
+    background: rgba(255, 255, 255, 0.5); }
+  .customers-component form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; }
+  .customers-component input {
+    width: 50%;
+    height: 30px;
+    font-size: 15px;
+    background-color: transparent;
+    border: 0px solid;
+    border-bottom: 1px solid #2f2e2e;
+    outline: none;
+    margin-left: 10px; }
+  .customers-component ::placeholder {
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2f2e2e; }
+  .customers-component .customer-card {
+    width: 325px;
+    height: 250px;
+    border: 1.5px solid #2f2e2e;
+    margin: 40px;
+    background: rgba(255, 255, 255, 0.4); }
+  .customers-component .add-button {
+    width: 70px;
+    height: 70px;
+    background: #33bdb3;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0px 20px 20px 0px; }
+    .customers-component .add-button button {
+      width: 100%;
+      height: 70px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 70px;
+      outline: none; }
+      .customers-component .add-button button img {
+        padding-bottom: 15px; }
+  .customers-component .add-button:hover {
+    background: #2f2e2e; }
+
+.customer-info a {
+  color: #2f2e2e; }
+
+.fullname {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  font-weight: bolder;
+  padding: 20px; }
+
+.phone {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px; }
+  .phone span {
+    padding-top: 5px; }
+
+.email {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px; }
+  .email span {
+    padding-top: 5px; }
+
+.address {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px; }
+  .address span {
+    padding-top: 5px; }

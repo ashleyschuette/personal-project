@@ -1,4 +1,14 @@
 module.exports = {
+    getAllCustomers: (req, res, next) => {
+        const db = req.app.get('db');
+
+        db.get_allCustomers()
+            .then((customers) => {
+            res.status(200).send(customers)
+            })
+        .catch(err => res.status(500).send(err))
+    },
+
     getCustomer: (req, res, next) => {
         const db = req.app.get('db');
 
@@ -21,7 +31,6 @@ module.exports = {
             .then((customers) => {
             res.status(200).send(customers)
         })
-        
     },
 
     postNewCustomer: (req, res, next) => {

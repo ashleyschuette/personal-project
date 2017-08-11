@@ -1,0 +1,47 @@
+ .customer-info a {
+        color: $darkgray;
+    }
+
+.fullname {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: $nunito;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+.phone {
+    font-family: $nunito;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+
+    span {
+        padding-top: 5px;
+    }
+}
+
+.email {
+    font-family: $nunito;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+
+    span {
+        padding-top: 5px;
+    }
+}
+
+.address {
+    font-family: $nunito;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+
+    span {
+        padding-top: 5px;
+    }
+}
