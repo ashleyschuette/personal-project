@@ -1,8 +1,5 @@
-.customers-component {
-    display: flex;
-
-    .component-content {
-        @include width-height(100%, 100vh);
+.component-content {
+        margin-left: 17%;
     }
 
     .component-header {
@@ -38,19 +35,17 @@
             text-transform: uppercase;
             color: $darkgray;
         }
-
-    .customer-card {
-        @include width-height(325px, 250px);
-        border: 1.5px solid $darkgray;
-        margin: 40px;
-        background: rgba(255, 255, 255, .4);
+    
+    .customer-cards {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .add-button {
         @include width-height(70px, 70px);
         background: $teal;
         border-radius: 50%;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         right: 0;
         margin: 0px 20px 20px 0px;
@@ -72,5 +67,3 @@
     .add-button:hover {
             background: $darkgray;
         }
-
-}

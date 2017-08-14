@@ -13,13 +13,17 @@ export default class CustomerInvoices extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/invoices/2')
-            .then((customers) => { 
-                console.log(customers.data)
-                this.setState({ customers: customers.data })
-            })
-            .catch(err => console.log(err));
-    }
+        axios.get('/api/user')
+            .then((customers) => axios.get(`/api/invoices/${customers.id}`)
+                .then((customers) => {
+                    console.log(customers.data)
+                    this.setState({ customers: customers.data })
+                }))
+                .catch(err => console.log(err))
+                .catch(console.log('sorry, something went wrong'))
+    }        
+
+        
 
     render() {
         console.log(this.state.customers)

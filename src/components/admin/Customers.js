@@ -43,14 +43,8 @@ export default class Customers extends Component {
         
     render() {
 
-        const customers = this.state.customers.map((customer, index) => {
-      return (
-        <Card key={index} customers={customer} />
-      )
-    })
-
         return (
-            <div className="customers-component">
+            <div>
                 <AdminNAV />
                 <div className="component-content">
                 <div className="component-header"><h1> Customers </h1></div>
@@ -63,7 +57,7 @@ export default class Customers extends Component {
                     onChange={this.handleChange}
                     />
                 </form>
-                <div className="customer-card">
+                <div className="customer-cards">
                     {this.state.customers.map((customer, index) => {
                             return <Card key={index}
                                 id={customer.id}
@@ -75,14 +69,13 @@ export default class Customers extends Component {
                                 location={customer.city + ',' + ' ' + customer.state + ' ' + customer.zipcode}
                         />
                         })}
-                    {customers}    
+                    </div>    
                     <div className="add-button">
                     <Link to={'/createcustomer'}>
                     <button>
                         <img src={require('../../media/add.svg')} />            
                     </button>
                     </Link>
-                    </div>        
                     </div>
                 </div>
             </div>

@@ -21,8 +21,16 @@ massive('postgres://nvcmqnobwchylz:9336669d8135ac4bad09d0e55bff551a5d02c65f78f45
         },
         
             function (accessToken, refreshToken, extraParams, profile, done) {
+
+                const { email } = profile._json;
+
+                const id = profile.identities[0].user_id;
+
+                db.update_user([id, email]).then((user) => {
+                        done(null, user[0])
+                })
                 // here you would go to db to find and create user
-                return done(null, profile); // Goes to serializeUser when you invoke done 
+                // return done(null, profile); // Goes to serializeUser when you invoke done 
             }));
     })
 
@@ -41,7 +49,8 @@ app.use(passport.session())
 // Auth0
 app.use(cors());
 
-passport.serializeUser(function(profileToSession, done) {
+passport.serializeUser(function (profileToSession, done) {
+    console.log('serialize', profileToSession)
   done(null, profileToSession); // puts second arguement(profiletosession) on session
 });
 
@@ -54,12 +63,17 @@ app.get('/auth', passport.authenticate('auth0'));
 
 app.get('/auth/callback',
     passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/'
+    successRedirect: 'http://localhost:3000/' // url determines if the user is admin or customer
     }))
 
-app.get('/me', function (req, res) {
+app.get('/auth/me', function (req, res) {
     res.send(req.user)
-})       
+})  
+
+app.get('/auth/logout', function (req, res) {
+    req.logout();
+    res.redirect('http://localhost:3000/') // change this to the sign in route
+})
 
 // Database
 
@@ -77,6 +91,10 @@ app.get('/api/customer/:id', customerController.getCustomerInvoice)
 app.post('/api/createcustomer', customerController.postNewCustomer)
 // Creating new invoice for a specific customer
 app.post('/api/createinvoice/:id', customerController.postNewInvoice)
+// Get all invoices on load
+app.get('/api/invoices', customerController.getAllInvoices)
+// Get specific customer invoice details 
+app.get('/api/invoice/details/:id', customerController.getInvoiceDetails)
 
 
 //Get user specific invoices

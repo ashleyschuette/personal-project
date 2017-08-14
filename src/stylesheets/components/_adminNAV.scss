@@ -1,6 +1,7 @@
 .adminNAV {
-    @include width-height(18%, 100vh);
+    @include width-height(17%, 100vh);
     background: $darkgray;
+    position: fixed;
 
 
     h1 {

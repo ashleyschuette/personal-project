@@ -9,6 +9,26 @@ module.exports = {
         .catch(err => res.status(500).send(err))
     },
 
+    getAllInvoices: (req, res, next) => {
+        const db = req.app.get('db');
+
+        const { firstName, lastName } = req.query;
+
+        if (firstName && lastName) {
+            db.get_searchInvoice([firstName, lastName])
+            .then((customers) => {
+            res.status(200).send(customers)
+            })
+        .catch(err => res.status(500).send(err))
+        }
+        
+        db.get_allInvoices()
+            .then((customers) => {
+                res.status(200).send(customers)
+            })
+            .catch(err => res.status(500).send(err))
+        },
+
     getCustomer: (req, res, next) => {
         const db = req.app.get('db');
 
@@ -32,6 +52,17 @@ module.exports = {
             res.status(200).send(customers)
         })
     },
+
+    getInvoiceDetails: (req, res, next) => {
+        const db = req.app.get('db');
+
+        const { id } = req.params
+
+        db.get_invoiceDetails([id])
+            .then((customers) => {
+                res.status(200).send(customers)
+            })
+    }, 
 
     postNewCustomer: (req, res, next) => {
         const db = req.app.get('db')

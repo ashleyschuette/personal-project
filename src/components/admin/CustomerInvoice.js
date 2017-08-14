@@ -23,12 +23,11 @@ export default class CustomerInvoice extends Component {
         render() {
             return (
                 <div>
-                    <nav>
-                        <AdminNAV />
-                    </nav>
-                     {/* <h1> { customer.first_name + ' ' + customer.last_name } </h1>  */}
-                     <div>
-                        
+                    <AdminNAV />
+                    <div className="component-content">
+                       <h1 className="component-header"> CUSTOMER NAME HERE </h1>   
+                     
+                        <div className="customer-cards">
                         {this.state.customers.map((customer, index) => {
                             // add money data type together console.log(Number(customer.labor_cost.replace('$', '')) + Number(customer.supplies_cost.replace('$', '')) + Number(customer.foam_cost.replace('$', '')) + Number(customer.fabric_cost.replace('$', '')))
                             return <InvoiceCard
@@ -43,10 +42,13 @@ export default class CustomerInvoice extends Component {
                                 total={customer.total} />
                         })}
                     </div>
-                     <div>
+                     <div className="add-button">
                     <Link to={'/createinvoice/2'}>
-                    <button>Add</button>
+                    <button>
+                        <img src={require('../../media/add.svg')} />             
+                    </button>
                     </Link>
+                    </div>        
                     </div>
                  </div> 
             )
