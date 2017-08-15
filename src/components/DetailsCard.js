@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Payment from './Payment';
 
 
 export default class DetailsCard extends Component {
     render() {
+        console.log(this.props)
         return (
             <div >
                 <div className="invoice-detail-content">
@@ -66,11 +68,18 @@ export default class DetailsCard extends Component {
                 </div> 
                 <div className="amount-label">TOTAL
                         <span className="amounts">{this.props.total}</span>
+                            </div>
+                <div className="amount-due">Amount Due
+                    <span className="amounts">{' '+this.props.total}</span>            
                 </div> 
-                     
-                    <div>Notes
-                        <span>{this.props.notes}</span>
-                    </div>             
+                
+                <div className="button-container">           
+                    <button className="payment-button">Make A Payment</button>           
+                </div> 
+                <div>
+                    <Payment
+                        total={this.props.total}/>            
+                </div>            
                 </div>        
                 </div>
                 </div>    

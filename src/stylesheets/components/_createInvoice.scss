@@ -1,0 +1,59 @@
+.new-invoice-content {
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.label {
+    font-family: $nunito;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.inline-inputs {
+    display: flex;
+}
+
+.bottom-line{
+    @include width-height(150px, auto); 
+}
+
+.date-font {
+    font-family: $nunito;
+}
+
+.type-quantity {
+    display: flex;
+    margin-top: 20px;
+}
+
+
+.quantity-select {
+    margin-left: 50px;
+}
+
+.type-line {
+    width: 600px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.invoice-fabric-container {
+    display: flex;
+    margin-top: 20px;
+
+    .fabric-container {
+        margin-left: 30px;
+    }
+}
+
+.notes-label {
+    margin-top: 30px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.notes-container {
+    border: 1px solid $darkgray;
+    @include width-height(50%, 150px);
+}

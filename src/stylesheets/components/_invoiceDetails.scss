@@ -39,29 +39,65 @@
             margin-right: 15px;
 
             .invoice-header-text {
-                margin-left: 40px;
+                margin-left: 100px;
             }
         }
 
         .amount-label {
             display: flex;
             justify-content: space-between;
-            margin-left: 40px;
+            margin-left: 100px;
             line-height: 30px;
             font-family: $nunito;
             font-size: 16px;
         }
 
         .amounts {
-             margin-right: 100px;
+             margin-right: 40px;
         }
 
         .fabric-details {
             @include width-height(200px, auto);
+            line-height: 20px;
             font-family: $nunito;
-            margin-left: 70px;
+            margin-left: 130px;
         }
     }
-}
+
+    .amount-due {
+        text-align: right;
+        margin: 10px 0px 10px 0;
+        font-family: $nunito;
+        font-size: 18px;
+    }
+
+    .button-container {
+        text-align: right;
+        margin: 20px 30px 20px 0;
+    
+
+    .payment-button {
+        background: $teal;
+        border: none;
+        color: #fff;
+        padding: 10px;
+        font-size: 13px;
+        text-transform: uppercase;
+        outline: none;
+        transition: ease-in-out 0.3s;
+    }
+
+    .payment-button:hover {
+        background: $darkgray;
+    }
+        
+    }
+        .custom-button {
+            background: $teal;
+        }
+    }
+
+
+
 
 

@@ -42,7 +42,6 @@ export default class InvoiceDetails extends Component {
                         fabricPattern={customer.fabric_pattern}
                         fabricColor={customer.fabric_color}
                         yards={customer.yards}
-                        notes={customer.notes}
                     />
                     })}
                 </div>    

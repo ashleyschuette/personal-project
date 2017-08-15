@@ -145,7 +145,8 @@ input {
   position: fixed;
   bottom: 0;
   right: 0;
-  margin: 0px 20px 20px 0px; }
+  margin: 0px 20px 20px 0px;
+  transition: ease-in-out 0.3s; }
   .add-button button {
     width: 100%;
     height: 70px;
@@ -287,18 +288,88 @@ input {
       border-right: 0em solid transparent;
       right: 0; }
     .invoice-detail-content .left-content .invoice-header .invoice-header-text {
-      margin-left: 40px; }
+      margin-left: 100px; }
   .invoice-detail-content .left-content .amount-label {
     display: flex;
     justify-content: space-between;
-    margin-left: 40px;
+    margin-left: 100px;
     line-height: 30px;
     font-family: "Nunito", sans-serif;
     font-size: 16px; }
   .invoice-detail-content .left-content .amounts {
-    margin-right: 100px; }
+    margin-right: 40px; }
   .invoice-detail-content .left-content .fabric-details {
     width: 200px;
     height: auto;
+    line-height: 20px;
     font-family: "Nunito", sans-serif;
-    margin-left: 70px; }
+    margin-left: 130px; }
+  .invoice-detail-content .amount-due {
+    text-align: right;
+    margin: 10px 0px 10px 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 18px; }
+  .invoice-detail-content .button-container {
+    text-align: right;
+    margin: 20px 30px 20px 0; }
+    .invoice-detail-content .button-container .payment-button {
+      background: #33bdb3;
+      border: none;
+      color: #fff;
+      padding: 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      outline: none;
+      transition: ease-in-out 0.3s; }
+    .invoice-detail-content .button-container .payment-button:hover {
+      background: #2f2e2e; }
+  .invoice-detail-content .custom-button {
+    background: #33bdb3; }
+
+.new-invoice-content {
+  margin-left: 50px;
+  margin-top: 30px;
+  width: 100%; }
+
+.label {
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  margin-top: 20px; }
+
+.inline-inputs {
+  display: flex; }
+
+.bottom-line {
+  width: 150px;
+  height: auto; }
+
+.date-font {
+  font-family: "Nunito", sans-serif; }
+
+.type-quantity {
+  display: flex;
+  margin-top: 20px; }
+
+.quantity-select {
+  margin-left: 50px; }
+
+.type-line {
+  width: 600px;
+  margin-top: 20px;
+  margin-left: 50px; }
+
+.invoice-fabric-container {
+  display: flex;
+  margin-top: 20px; }
+  .invoice-fabric-container .fabric-container {
+    margin-left: 30px; }
+
+.notes-label {
+  margin-top: 30px;
+  padding-left: 10px;
+  margin-bottom: 10px; }
+
+.notes-container {
+  border: 1px solid #2f2e2e;
+  width: 50%;
+  height: 150px; }

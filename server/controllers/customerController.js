@@ -78,7 +78,7 @@ module.exports = {
         const db = req.app.get('db')
 
         const {workType, furnitureType, quantity, laborCost, suppliesCost, foamCost, fabricCost, fabricBrand, fabricPattern, fabricColor, yards, notes, date } = req.body;
-        db.create_customerInvoice([2, workType, furnitureType, quantity, laborCost, suppliesCost, foamCost, fabricCost, fabricBrand, fabricPattern, fabricColor, yards, notes, date])
+        db.create_customerInvoice([2, workType, furnitureType, quantity, laborCost, suppliesCost, foamCost, fabricCost, fabricBrand, fabricPattern, fabricColor, yards, notes, date, laborCost+suppliesCost+foamCost+fabricCost])
             .then(() => res.status(200).json())
             .catch(() => res.status(500).json())
     }

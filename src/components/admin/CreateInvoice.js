@@ -138,23 +138,27 @@ export default class CreateInvoice extends Component {
     }
 
     render() {
-        // console.log(this.state.suppliesCost)
-        console.log(this.state.quantity)
-        // console.log(this.state.date)
         return (
             <div>
                 <AdminNAV />
                 <div className="component-content">
                     <h1 className="component-header">Create New Invoice</h1>
-                <h3>Date</h3>
-                <input onChange={this.dateonChange} type="date" />
-                <h3>Type of Work</h3>
+                    <div className="new-invoice-content">
+                <div className="inline-inputs">
+                <h3 className="label">Date</h3>
+                <input className="bottom-line date-font" onChange={this.dateonChange} type="date" />
+                    </div>
+                <div className="type-quantity">    
+                <div>
+                <h3 className="label">Type</h3>
                 <select onChange={this.workTypeonChange}>
                     <option>Select</option>
                     <option value="Upholstery">Upholstery</option>
                     <option value="Refinishing">Refinishing</option>
-                </select>
-                <h3>Quantity</h3>
+                        </select>
+                </div>  
+                <div className="quantity-select">        
+                <h3 className="label">Quantity</h3>
                 <select onChange={this.quantityonChange}>
                     <option>Select</option>
                     <option value="1">1</option>
@@ -167,26 +171,46 @@ export default class CreateInvoice extends Component {
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
-                </select>
+                            </select>
+                   
+                </div>  
+                <div className="type-line">        
                 <input onChange={this.furnitureTypeonChange} placeholder="Furniture Type" />
-                <h3>Estimate</h3>
-                <h4>Labor $</h4>
-                <input onChange={this.laborCostonChange}/>
-                <h4>Supplies $</h4>
-                <input onChange={this.suppliesCostonChange} />
-                <h4>Foam $</h4>
-                <input onChange={this.foamCostonChange}/>
-                <h4>Fabric $</h4>
-                <input onChange={this.fabricCostonChange}/>
-                <h3>Fabric</h3>
+                </div>
+                </div> 
+                <div className="invoice-fabric-container"> 
+                <div>       
+                <h3 className="label">Invoice</h3>
+                <div className="inline-inputs">  
+                <h4 className="label">Labor $</h4>
+                <input className="bottom-line" onChange={this.laborCostonChange} />
+                </div>  
+                <div className="inline-inputs">     
+                <h4 className="label">Supplies $</h4>
+                <input className="bottom-line" onChange={this.suppliesCostonChange} />
+                    </div>
+                <div className="inline-inputs">     
+                <h4 className="label">Foam $</h4>
+                <input className="bottom-line" onChange={this.foamCostonChange} />
+                    </div>
+                <div className="inline-inputs">     
+                <h4 className="label">Fabric $</h4>
+                <input className="bottom-line" onChange={this.fabricCostonChange}/>
+                            </div>
+                </div>  
+                <div className="fabric-container">       
+                <h3 className="label">Fabric</h3>    
                 <input onChange={this.fabricBrandonChange} placeholder="Fabric Brand" />
                 <input onChange={this.fabricPatternonChange} placeholder="Pattern" />
                 <input onChange={this.fabricColoronChange} placeholder="Color" />
                 <input onChange={this.yardsonChange} placeholder="Yards" />
-                <h3>Notes</h3>
-                <input onChange={this.notesonChange}/>
+                </div> 
+                </div>        
+                <h3 className="label notes-label">Notes</h3>
+                <input className="notes-container" onChange={this.notesonChange}/>
                 <button onClick={this.onSave}>SAVE</button>
                 </div> 
+                </div>
             </div>    
         )
     }
