@@ -143,10 +143,9 @@ export default class CreateInvoice extends Component {
         // console.log(this.state.date)
         return (
             <div>
-                <nav>
-                    <AdminNAV/>
-                </nav>
-                <h1> Create New Invoice </h1>
+                <AdminNAV />
+                <div className="component-content">
+                    <h1 className="component-header">Create New Invoice</h1>
                 <h3>Date</h3>
                 <input onChange={this.dateonChange} type="date" />
                 <h3>Type of Work</h3>
@@ -187,6 +186,7 @@ export default class CreateInvoice extends Component {
                 <h3>Notes</h3>
                 <input onChange={this.notesonChange}/>
                 <button onClick={this.onSave}>SAVE</button>
+                </div> 
             </div>    
         )
     }

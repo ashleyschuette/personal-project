@@ -8,3 +8,24 @@
    width: $width;
    height: $height;
 }
+
+@mixin ribbon($size-left:1em, $size-right:1em) {
+    position: relative;
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+    }
+    &:before {
+        border-top: $size-left solid $darkgray;
+        bottom: -$size-left;
+        border-left: $size-left solid transparent;
+        left: 0;
+    }
+    &:after {
+        border-top: $size-right solid $darkgray;
+        bottom: -$size-right;
+        border-right: $size-right solid transparent;
+        right: 0;
+    }
+}

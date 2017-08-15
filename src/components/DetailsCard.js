@@ -1,56 +1,80 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 
-export default class Card extends Component {
+export default class DetailsCard extends Component {
     render() {
         return (
-                <div>
-                <div>
-                    <img style={{height: '100%', position: 'absolute', left: '50%', transform: 'translate(-50%, 0%'}} src={this.props.imageurl} />
-                </div>
-                <div >
-                    <div>{this.props.date}</div>
-                <div>Quantity:
-                    <span>{' '+this.props.quantity}</span>
-                </div>    
-                <div>Type:
-                    <span>{' '+this.props.workType}</span>
-                </div>
-                <div>Estimate</div>
-                <div>Labor:
-                    <span>{' '+this.props.laborCost}</span>     
-                </div> 
-                <div>Supplies:
-                        <span>{' '+this.props.suppliesCost}</span>    
-                </div>  
-                <div>Foam:
-                    <span>{' '+this.props.foamCost}</span>    
-                </div> 
-                <div>Fabric:
-                    <span>{' '+this.props.fabricCost}</span>    
-                </div> 
-                <div className="total">
-                        {this.props.total}
-                </div>      
-                <div>Fabric</div>  
-                <div>Brand:
-                    <span>{' '+this.props.fabricBrand}</span>    
-                </div>    
-                <div>Pattern:
-                    <span>{' '+this.props.fabricPattern}</span>    
-                </div> 
-                <div>Color:
-                    <span>{' '+this.props.fabricColor}</span>
+            <div >
+                <div className="invoice-detail-content">
+                <div className="image-holder">
+                    <img style={{height: '250px'}} src={this.props.imageurl} />
                     </div>
-                <div>Yards:
-                    <span>{' '+this.props.yards}</span>
+                <div className="invoice-text">
+                    <div className="top-right">
+                        <div className="excel-address">        
+                            <div className="company-name">Excel Interiors</div>
+                            <div>7892 Market Blvd.</div>   
+                            <div>Chanhassen, MN 55317</div> 
+                        </div>                
+                    <div className="top-right-invoice">Invoice Date:
+                        <div>{' '+this.props.date}</div>
+                    <div>Quantity:
+                        <span>{' '+this.props.quantity}</span>
                     </div>    
+                    <div>Type:
+                        <span>{' '+this.props.workType}</span>
+                    </div>
+                    <div>Amount Due:
+                        <span>{' '+this.props.total}</span>    
+                    </div>                
+                    </div>                
+                    </div>  
+                <div className="left-content">
+                <div className="invoice-header">
+                    <h1 className="invoice-header-text">Invoice</h1>  
+                    <span className="amounts">Amount</span>                
+                </div>        
+                <div className="amount-label">
+                    <h1>Labor</h1>
+                    <span className="amounts">{' '+this.props.laborCost}</span>     
+                </div> 
+                <div className="amount-label">
+                    <h1>Supplies</h1>
+                        <span className="amounts">{' '+this.props.suppliesCost}</span>    
+                </div>  
+                <div className="amount-label">
+                    <h1>Foam</h1>
+                    <span className="amounts">{' '+this.props.foamCost}</span>    
+                </div> 
+                <div className="amount-label">
+                    <h1>Fabric</h1>            
+                    <span className="amounts">{' ' + this.props.fabricCost}</span>
+                </div> 
+                <div className="fabric-details">           
+                      <div>Brand:
+                        <span>{' '+this.props.fabricBrand}</span>    
+                    </div>    
+                    <div>Pattern:
+                        <span>{' '+this.props.fabricPattern}</span>    
+                    </div> 
+                    <div>Color:
+                        <span>{' '+this.props.fabricColor}</span>
+                        </div>
+                    <div>Yards:
+                        <span>{' '+this.props.yards}</span>
+                    </div>     
+                </div> 
+                <div className="amount-label">TOTAL
+                        <span className="amounts">{this.props.total}</span>
+                </div> 
+                     
+                    <div>Notes
+                        <span>{this.props.notes}</span>
+                    </div>             
+                </div>        
                 </div>
-                <div>Notes
-                    <span>{this.props.notes}</span>
-                </div>
-            </div>
+                </div>    
+            </div>    
         );
     }
 }

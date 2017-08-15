@@ -3,7 +3,7 @@ import AdminNAV from './admin/AdminNAV';
 import DetailsCard from './DetailsCard';
 import axios from 'axios';
 
-export default class Card extends Component {
+export default class InvoiceDetails extends Component {
     constructor(props) {
         super(props);
 
@@ -24,7 +24,8 @@ export default class Card extends Component {
         return (
             <div>
                 <AdminNAV />
-                <div className="component-header"><h1> Furniture Type Here </h1></div>
+                <div className="component-content">
+                    <div className="component-header"><h1> Furniture Type Here </h1></div>    
                 {this.state.customers.map((customer, index) => {
                     return <DetailsCard
                         key={index}
@@ -43,7 +44,8 @@ export default class Card extends Component {
                         yards={customer.yards}
                         notes={customer.notes}
                     />
-                })}
+                    })}
+                </div>    
             </div>    
         )
     }

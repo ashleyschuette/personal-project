@@ -13,7 +13,8 @@
 
     .your-account {
         @include width-height(100%, 40px);
-        border: 1px solid #fff;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
         background: #505050;
         margin-top: 20px;
 

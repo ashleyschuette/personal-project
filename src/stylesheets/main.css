@@ -62,7 +62,8 @@ a {
   .adminNAV .your-account {
     width: 100%;
     height: 40px;
-    border: 1px solid #fff;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     background: #505050;
     margin-top: 20px; }
     .adminNAV .your-account h2 {
@@ -240,3 +241,64 @@ input {
     bottom: 10px;
     left: 0;
     right: 0; }
+  .customer-invoice-info .customer-invoice-info a {
+    color: #2f2e2e; }
+
+.invoice-detail-content {
+  display: flex;
+  margin: 30px; }
+  .invoice-detail-content .invoice-text {
+    width: 80%;
+    height: auto;
+    background: rgba(255, 255, 255, 0.4);
+    margin-left: 30px; }
+    .invoice-detail-content .invoice-text .top-right {
+      text-align: right;
+      margin: 30px; }
+      .invoice-detail-content .invoice-text .top-right .excel-address {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 20px; }
+  .invoice-detail-content .top-right-invoice {
+    font-family: "Nunito", sans-serif; }
+  .invoice-detail-content .left-content .invoice-header {
+    width: 102.1%;
+    height: 35px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: #33bdb3;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Nunito", sans-serif;
+    margin-left: -15px;
+    margin-right: 15px; }
+    .invoice-detail-content .left-content .invoice-header:before, .invoice-detail-content .left-content .invoice-header:after {
+      content: "";
+      position: absolute; }
+    .invoice-detail-content .left-content .invoice-header:before {
+      border-top: 1em solid #2f2e2e;
+      bottom: -1em;
+      border-left: 1em solid transparent;
+      left: 0; }
+    .invoice-detail-content .left-content .invoice-header:after {
+      border-top: 0em solid #2f2e2e;
+      bottom: 0em;
+      border-right: 0em solid transparent;
+      right: 0; }
+    .invoice-detail-content .left-content .invoice-header .invoice-header-text {
+      margin-left: 40px; }
+  .invoice-detail-content .left-content .amount-label {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    line-height: 30px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px; }
+  .invoice-detail-content .left-content .amounts {
+    margin-right: 100px; }
+  .invoice-detail-content .left-content .fabric-details {
+    width: 200px;
+    height: auto;
+    font-family: "Nunito", sans-serif;
+    margin-left: 70px; }
