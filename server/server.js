@@ -56,7 +56,8 @@ passport.serializeUser(function (profileToSession, done) {
 });
 
 passport.deserializeUser(function(profileFromSession, done) { // profilefromsession is value from session
-  done(null, profileFromSession);
+    console.log(profileFromSession);
+    done(null, profileFromSession);
 });
         
 app.get('/auth', passport.authenticate('auth0'));
@@ -74,15 +75,14 @@ app.get('/auth/me', function (req, res) {
 
 app.get('/auth/logout', function (req, res) {
     req.logout();
-    res.redirect('http://localhost:3000/') // change this to the sign in route
+    res.redirect('http://localhost:3000/signin') // change this to the sign in route
 })
 
 // Database
 
-// app.get('/api/user', customerController.getUser);
-
-
 const customerController = require('./controllers/customerController');
+// Find admin status
+// app.get('/api/user', customerController.findAdminStatus)
 // Get all customers on load
 app.get('/api/customers', customerController.getAllCustomers)
 //Get Customers for Search in Admin View
@@ -96,6 +96,7 @@ app.post('/api/createinvoice/:id', customerController.postNewInvoice)
 // Get all invoices on load
 app.get('/api/invoices', customerController.getAllInvoices)
 // Get specific customer invoice details 
+
 app.get('/api/invoice/details/:id', customerController.getInvoiceDetails)
 app.get('/api/search', customerController.searchInvoices)
 

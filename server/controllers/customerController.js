@@ -11,7 +11,38 @@ module.exports = {
 
     getAllInvoices: (req, res, next) => {
         const db = req.app.get('db');
-        // const firstname = '%' + req.query.firstName + '%';
+
+        const { id, admin } = req.params
+
+        db.findAdminStatus([req.user.id, req.user.admin]).then((user) => {
+            console.log('found admin', user)
+
+            if (user[0].admin) {
+                db.get_allInvoices()
+                    .then((customers) => {
+                        res.status(200).send(customers)
+                    })
+            } else {
+                db.get_UserInvoices([req.user.id])
+                    .then((customers) => {
+                        customers[0].first_name = user[0].first_name
+                        customers[0].last_name = user[0].last_name
+                        console.log('found customer', customers)
+
+                        res.status(200).send(customers)
+                    })
+                .catch(err => res.status(500).send(err))
+            }
+            
+        })
+        
+        // db.get_allInvoices()
+        //     .then((customers) => {
+        //         res.status(200).send(customers)
+        //     })
+        //     .catch(err => res.status(500).send(err))
+
+         // const firstname = '%' + req.query.firstName + '%';
         // const lastname = '%' + req.query.lastName + '%';
         
 
@@ -22,12 +53,6 @@ module.exports = {
         //     })
         // .catch(err => res.status(500).send(err))
         // }
-        
-        db.get_allInvoices()
-            .then((customers) => {
-                res.status(200).send(customers)
-            })
-            .catch(err => res.status(500).send(err))
     },
     
      searchInvoices: (req, res, next) => {
