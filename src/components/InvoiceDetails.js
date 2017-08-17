@@ -33,10 +33,10 @@ export default class InvoiceDetails extends Component {
                         date={customer.creation_date}
                         quantity={customer.quantity}
                         workType={customer.work_type}
-                        laborCost={customer.labor_cost}
-                        suppliesCost={customer.supplies_cost}
-                        foamCost={customer.foam_cost}
-                        fabricCost={customer.fabric_cost}
+                        laborCost={'$'+customer.labor_cost}
+                        suppliesCost={'$'+customer.supplies_cost}
+                        foamCost={'$'+customer.foam_cost}
+                        fabricCost={'$'+customer.fabric_cost}
                         total={customer.total}
                         fabricBrand={customer.fabric_brand}
                         fabricPattern={customer.fabric_pattern}

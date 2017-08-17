@@ -11,30 +11,48 @@ module.exports = {
 
     getAllInvoices: (req, res, next) => {
         const db = req.app.get('db');
+        // const firstname = '%' + req.query.firstName + '%';
+        // const lastname = '%' + req.query.lastName + '%';
+        
 
-        const { firstName, lastName } = req.query;
-
-        if (firstName && lastName) {
-            db.get_searchInvoice([firstName, lastName])
-            .then((customers) => {
-            res.status(200).send(customers)
-            })
-        .catch(err => res.status(500).send(err))
-        }
+        // if (req.query.firstName && req.query.lastName) {
+        //     db.get_searchInvoice([firstname, lastname])
+        //     .then((customers) => {
+        //     res.status(200).send(customers)
+        //     })
+        // .catch(err => res.status(500).send(err))
+        // }
         
         db.get_allInvoices()
             .then((customers) => {
                 res.status(200).send(customers)
             })
             .catch(err => res.status(500).send(err))
-        },
+    },
+    
+     searchInvoices: (req, res, next) => {
+        const db = req.app.get('db');
+        const firstname = '%' + req.query.firstName + '%';
+        const lastname = '%' + req.query.lastName + '%';
+        
+        if (req.query.firstName && req.query.lastName) {
+            db.get_searchInvoice([firstname, lastname])
+            .then((customers) => {
+            res.status(200).send(customers)
+            })
+        .catch(err => res.status(500).send(err))
+        }
+    },
+    
 
     getCustomer: (req, res, next) => {
         const db = req.app.get('db');
 
         const { firstName, lastName } = req.query;
+        const firstname = '%' + firstName + '%';
+        const lastname = '%' + lastName + '%';
 
-        db.get_customers([firstName, lastName])
+        db.get_customers([firstname, lastname])
             .then((customers) => {
                 res.status(200).send(customers)
             })

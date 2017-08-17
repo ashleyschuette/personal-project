@@ -1,2 +1,2 @@
-select * from customer 
-where first_name = $1 and last_name = $2;
+select * from customer
+where lower(first_name) LIKE lower($1) or lower(last_name) LIKE lower($2)

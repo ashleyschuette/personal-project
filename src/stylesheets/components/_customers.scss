@@ -8,7 +8,6 @@
         font-size: 27px;
         text-transform: uppercase;
         font-family: $nunito;
-        font-weight: bolder;
         padding: 15px 0px 0px 20px;
         background: rgba(255, 255, 255, .5)
     }
@@ -22,11 +21,15 @@
     input {
         @include width-height(50%, 30px);
         font-size: 15px;
+        font-family: $nunito;
         background-color: transparent;
         border: 0px solid;
-        border-bottom: 1px solid $darkgray;
         outline: none;
         margin-left: 10px;
+    }
+
+    .search-border {
+        border-bottom: 1px solid $darkgray;
     }
 
     ::placeholder {

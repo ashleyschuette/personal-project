@@ -19,17 +19,20 @@ export default class Payment extends Component {
 
 
     render() {
-
+console.log(this.props)
         const stripePayment = (<StripeChekcout
+        
             token={this.onToken}
             stripeKey={'pk_test_qpLSWJpFY6tIpAUdwJUoljH7'}
             amount={this.props.total * 100}
             currency={'USD'}
-            locale="auto"
-        />);
+            locale="auto" >
+             <button className="payment-button">Make A Payment</button> 
+        </StripeChekcout>);
+        
 
         return (
-            <div>
+            <div className="button-container">
                 {stripePayment}
             </div>
         );

@@ -107,22 +107,32 @@ export default class CreateCustomer extends Component {
     render() {
         return (
             <div>
-            <nav>
-                <AdminNAV/>
-            </nav>
-            <h1> Create New Customer </h1>
-            <h3>Name</h3>
-            <input onChange={this.firstNameonChange} value={this.state.firstName} placeholder="FIRST NAME" />
-            <input onChange={this.lastNameonChange} value={this.state.lastName} placeholder="LAST NAME" />
-            <input onChange={this.emailonChange} value={this.state.email} placeholder="EMAIL" />
-            <input onChange={this.phoneonChange} value={this.state.phone} placeholder="PHONE" />
-            <h3>Address</h3>
-            <input onChange={this.addressonChange} value={this.state.address} placeholder="STREET" />
-            <input onChange={this.cityonChange} value={this.state.city} placeholder="CITY" />
-            <input onChange={this.stateonChange} value={this.state.state} placeholder="STATE" />
-            <input onChange={this.zipcodeonChange} value={this.state.zipcode} placeholder="ZIP CODE" />
-            <button onClick={this.onSave}>SAVE</button>    
-            </div>  
+                <AdminNAV />
+                <div className="component-content">
+                    <div className="component-header"><h1> Create New Customer </h1></div>
+                    <div className="new-customer-content">
+                    <h3 className="bold-label">Name</h3>
+                    <div className="first-last-name">
+                        <input className="input-border" onChange={this.firstNameonChange} value={this.state.firstName} placeholder="FIRST NAME" />
+                        <input className="input-border" onChange={this.lastNameonChange} value={this.state.lastName} placeholder="LAST NAME" />
+                    </div>
+                    <div className="email-phone">
+                        <input className="input-border" onChange={this.emailonChange} value={this.state.email} placeholder="EMAIL" />
+                        <input className="input-border" onChange={this.phoneonChange} value={this.state.phone} placeholder="PHONE" />
+                    </div>
+                    <h3 className="bold-label">Address</h3>
+                    <div className="street-city">
+                        <input className="input-border" onChange={this.addressonChange} value={this.state.address} placeholder="STREET" />
+                        <input className="input-border" onChange={this.cityonChange} value={this.state.city} placeholder="CITY" />
+                    </div>
+                    <div className="state-zip">
+                        <input className="input-border" onChange={this.stateonChange} value={this.state.state} placeholder="STATE" />
+                        <input className="input-border" onChange={this.zipcodeonChange} value={this.state.zipcode} placeholder="ZIP CODE" />
+                    </div>
+                    <button className="input-border" className="save-button" onClick={this.onSave}>SAVE</button>    
+                    </div> 
+                </div>    
+            </div>    
         )
     }
 }

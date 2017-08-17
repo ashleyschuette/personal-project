@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
-@import url("https://fonts.googleapis.com/css?family=Nunito:200");
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -108,7 +108,6 @@ a {
   font-size: 27px;
   text-transform: uppercase;
   font-family: "Nunito", sans-serif;
-  font-weight: bolder;
   padding: 15px 0px 0px 20px;
   background: rgba(255, 255, 255, 0.5); }
 
@@ -121,11 +120,14 @@ input {
   width: 50%;
   height: 30px;
   font-size: 15px;
+  font-family: "Nunito", sans-serif;
   background-color: transparent;
   border: 0px solid;
-  border-bottom: 1px solid #2f2e2e;
   outline: none;
   margin-left: 10px; }
+
+.search-border {
+  border-bottom: 1px solid #2f2e2e; }
 
 ::placeholder {
   font-family: "Nunito", sans-serif;
@@ -175,12 +177,12 @@ input {
   font-size: 25px;
   text-transform: uppercase;
   font-family: "Nunito", sans-serif;
-  font-weight: bolder;
+  font-weight: 400;
   padding: 20px; }
 
 .phone {
   font-family: "Nunito", sans-serif;
-  font-weight: bold;
+  font-weight: 300;
   display: flex;
   flex-direction: column;
   margin: 0px 20px; }
@@ -189,7 +191,7 @@ input {
 
 .email {
   font-family: "Nunito", sans-serif;
-  font-weight: bold;
+  font-weight: 300;
   display: flex;
   flex-direction: column;
   margin: 20px 20px; }
@@ -198,7 +200,7 @@ input {
 
 .address {
   font-family: "Nunito", sans-serif;
-  font-weight: bold;
+  font-weight: 300;
   display: flex;
   flex-direction: column;
   margin: 20px 20px; }
@@ -228,15 +230,15 @@ input {
   height: 275px;
   position: relative; }
   .customer-invoice-info .name {
-    font-weight: bolder;
+    font-weight: 700;
     padding-top: 30px;
     font-size: 20px; }
   .customer-invoice-info .furniture-type {
-    font-weight: bolder;
+    font-weight: 700;
     padding-top: 70px; }
   .customer-invoice-info .total {
     width: 100%;
-    font-weight: bolder;
+    font-weight: 700;
     font-size: 20px;
     position: absolute;
     bottom: 10px;
@@ -244,6 +246,9 @@ input {
     right: 0; }
   .customer-invoice-info .customer-invoice-info a {
     color: #2f2e2e; }
+
+.customer-invoice-link a {
+  color: #2f2e2e; }
 
 .invoice-detail-content {
   display: flex;
@@ -260,7 +265,11 @@ input {
         font-family: "Playfair Display", serif;
         margin-bottom: 20px; }
   .invoice-detail-content .top-right-invoice {
-    font-family: "Nunito", sans-serif; }
+    font-family: "Nunito", sans-serif;
+    font-weight: 200; }
+    .invoice-detail-content .top-right-invoice .top-invoice-date {
+      display: flex;
+      justify-content: flex-end; }
   .invoice-detail-content .left-content .invoice-header {
     width: 102.1%;
     height: 35px;
@@ -295,6 +304,7 @@ input {
     margin-left: 100px;
     line-height: 30px;
     font-family: "Nunito", sans-serif;
+    font-weight: 400;
     font-size: 16px; }
   .invoice-detail-content .left-content .amounts {
     margin-right: 40px; }
@@ -308,7 +318,8 @@ input {
     text-align: right;
     margin: 10px 0px 10px 0;
     font-family: "Nunito", sans-serif;
-    font-size: 18px; }
+    font-size: 18px;
+    font-weight: 700; }
   .invoice-detail-content .button-container {
     text-align: right;
     margin: 20px 30px 20px 0; }
@@ -333,11 +344,20 @@ input {
 
 .label {
   font-family: "Nunito", sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
   margin-top: 20px; }
 
+.bold-label {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase; }
+
 .inline-inputs {
-  display: flex; }
+  display: flex;
+  border-bottom: 1px solid #2f2e2e;
+  width: 300px;
+  height: auto; }
 
 .bottom-line {
   width: 150px;
@@ -348,28 +368,148 @@ input {
 
 .type-quantity {
   display: flex;
-  margin-top: 20px; }
+  margin-top: 25px; }
 
 .quantity-select {
   margin-left: 50px; }
 
+.select-dropdown {
+  height: 29px; }
+  .select-dropdown select {
+    border: 1px solid #2f2e2e;
+    background: transparent;
+    width: 115px;
+    padding-left: 10px;
+    font-size: 13px;
+    font-family: "Nunito", sans-serif;
+    border-radius: 0;
+    height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    margin-top: 10px; }
+
 .type-line {
-  width: 600px;
-  margin-top: 20px;
-  margin-left: 50px; }
+  width: 300px;
+  margin-top: 23px;
+  margin-left: 50px;
+  border-bottom: 1px solid #2f2e2e; }
 
 .invoice-fabric-container {
   display: flex;
   margin-top: 20px; }
+  .invoice-fabric-container .invoice-money-container {
+    margin-top: 10px; }
   .invoice-fabric-container .fabric-container {
-    margin-left: 30px; }
+    margin-left: 80px;
+    line-height: 26px; }
+    .invoice-fabric-container .fabric-container .fabric-label {
+      margin-left: 10px; }
+
+.create-invoice-input {
+  border-bottom: 1px solid #2f2e2e;
+  margin-top: 5px; }
 
 .notes-label {
   margin-top: 30px;
-  padding-left: 10px;
   margin-bottom: 10px; }
 
 .notes-container {
   border: 1px solid #2f2e2e;
-  width: 50%;
-  height: 150px; }
+  width: 64%;
+  height: 150px;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif; }
+
+.save-button {
+  width: 90px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  background: transparent;
+  margin-top: 10px;
+  border: 1px solid #2f2e2e;
+  color: #2f2e2e;
+  padding: 5px;
+  outline: none;
+  transition: ease-in-out 0.3s; }
+
+.save-button:hover {
+  background: #2f2e2e;
+  color: #fff;
+  border: none; }
+
+.new-customer-content {
+  margin-left: 50px;
+  margin-top: 30px; }
+
+.input-border {
+  width: 35%;
+  height: auto;
+  border-bottom: 1px solid #2f2e2e;
+  margin-right: 20px; }
+
+.first-last-name {
+  display: flex; }
+
+.email-phone {
+  display: flex; }
+
+.street-city {
+  display: flex; }
+
+.state-zip {
+  display: flex; }
+
+.signin-background {
+  width: 100%;
+  height: 100vh;
+  background: url("../media/signinbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.signin-container {
+  width: 35%;
+  height: 95%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-right: 20px;
+  transform: translate(0%, -50%);
+  border: 5px solid #fff; }
+
+.signin-header {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: #fff;
+  margin: 40px 0 0 40px; }
+
+.signin-subhead {
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  margin-top: 4px;
+  margin-left: 40px; }
+
+.signin-button {
+  width: 110px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  font-size: 15px;
+  text-transform: uppercase;
+  position: absolute;
+  right: 0;
+  margin: 30px 20px;
+  outline: none; }
+
+.signin-button:hover {
+  background: #33bdb3; }

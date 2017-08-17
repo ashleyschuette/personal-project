@@ -6,12 +6,21 @@
 
 .label {
     font-family: $nunito;
+    font-weight: 400;
     text-transform: uppercase;
     margin-top: 20px;
 }
 
+.bold-label {
+    font-family: $nunito;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
 .inline-inputs {
     display: flex;
+    border-bottom: 1px solid $darkgray;
+    @include width-height(300px, auto);
 }
 
 .bottom-line{
@@ -24,7 +33,7 @@
 
 .type-quantity {
     display: flex;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 
@@ -32,28 +41,88 @@
     margin-left: 50px;
 }
 
+.select-dropdown {
+    height: 29px;
+    
+
+ select {
+//   background: url('../down-arrow.svg') 96% / 15% no-repeat #eee;
+  border: 1px solid $darkgray;
+  background: transparent;
+  width: 115px;
+  padding-left: 10px;
+  font-size: 13px;
+  font-family: $nunito;
+  border-radius: 0;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  margin-top: 10px;
+  
+    }
+}
+
 .type-line {
-    width: 600px;
-    margin-top: 20px;
+    width: 300px;
+    margin-top: 23px;
     margin-left: 50px;
+    border-bottom: 1px solid $darkgray;
 }
 
 .invoice-fabric-container {
     display: flex;
     margin-top: 20px;
 
-    .fabric-container {
-        margin-left: 30px;
+    .invoice-money-container {
+        margin-top: 10px;
     }
+
+    .fabric-container {
+        margin-left: 80px;
+        line-height: 26px;
+
+        .fabric-label {
+            margin-left: 10px;
+        }
+    }
+}
+
+.create-invoice-input {
+    border-bottom: 1px solid $darkgray;
+    margin-top: 5px;
 }
 
 .notes-label {
     margin-top: 30px;
-    padding-left: 10px;
     margin-bottom: 10px;
 }
 
 .notes-container {
     border: 1px solid $darkgray;
-    @include width-height(50%, 150px);
+    @include width-height(64%, 150px);
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    font-family: $nunito;
+}
+
+.save-button {
+    @include width-height(90px, 30px);
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    background: transparent;
+    margin-top: 10px;
+    border: 1px solid $darkgray;
+    color: $darkgray;
+    padding: 5px;
+    outline: none;
+    transition: ease-in-out 0.3s;
+}
+
+.save-button:hover {
+    background: $darkgray;
+    color: #fff;
+    border: none;
 }

@@ -18,8 +18,11 @@ export default class DetailsCard extends Component {
                             <div>7892 Market Blvd.</div>   
                             <div>Chanhassen, MN 55317</div> 
                         </div>                
-                    <div className="top-right-invoice">Invoice Date:
+                        <div className="top-right-invoice">
+                        <div className="top-invoice-date">   
+                        Invoice Date:
                         <div>{' '+this.props.date}</div>
+                        </div>             
                     <div>Quantity:
                         <span>{' '+this.props.quantity}</span>
                     </div>    
@@ -70,13 +73,9 @@ export default class DetailsCard extends Component {
                         <span className="amounts">{this.props.total}</span>
                             </div>
                 <div className="amount-due">Amount Due
-                    <span className="amounts">{' '+this.props.total}</span>            
+                    <span className="amounts"> ${this.props.total}</span>            
                 </div> 
-                
-                <div className="button-container">           
-                    <button className="payment-button">Make A Payment</button>           
-                </div> 
-                <div>
+                  <div>           
                     <Payment
                         total={this.props.total}/>            
                 </div>            

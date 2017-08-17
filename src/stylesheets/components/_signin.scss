@@ -1,0 +1,52 @@
+.signin-background {
+    @include width-height (100%, 100vh);
+    background: url('../media/signinbackground.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.signin-container {
+        @include width-height (35%, 95%);
+        background: rgba(0,0,0, 0.6);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-right: 20px; 
+        transform: translate(0%, -50%);
+        border: 5px solid #fff;
+    }
+
+    .signin-header {
+        font-family: $playfair;
+        font-size: 40px;
+        letter-spacing: 2px;
+        color: #fff;
+        margin: 40px 0 0 40px;
+    }
+
+    .signin-subhead {
+        color: #fff;
+        font-family: $nunito;
+        font-weight: 200;
+        margin-top: 4px;
+        margin-left: 40px;
+    }
+
+    .signin-button {
+        @include width-height(110px, 32px);
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        font-family: $nunito;
+        font-weight: 200;
+        font-size: 15px;
+        text-transform: uppercase;
+        position: absolute;
+        right: 0;
+        margin: 30px 20px;
+        outline: none;
+    }
+
+    .signin-button:hover {
+        background: $teal;
+    }

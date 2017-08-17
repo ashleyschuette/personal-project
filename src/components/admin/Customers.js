@@ -33,10 +33,10 @@ export default class Customers extends Component {
 
     onSearchSubmit(event) {
         event.preventDefault();
-        var searchArray = this.state.searchTerm.split(' ');
-        var firstName = searchArray[0];
-        var lastName = searchArray[1];
-        axios.get(`/api/customer?firstName=${firstName}&lastName=${lastName}`)
+        // var searchArray = this.state.searchTerm.split(' ');
+        // var firstName = searchArray[0];
+        // var lastName = searchArray[1];
+        axios.get(`/api/customer?firstName=${this.state.searchTerm}&lastName=${this.state.searchTerm}`)
             .then((customers) => this.setState({searchTerm: '', customers: customers.data}))
             .catch(err => console.log(err));
     }
@@ -50,12 +50,12 @@ export default class Customers extends Component {
                 <div className="component-header"><h1> Customers </h1></div>
                 <form onSubmit={this.onSearchSubmit}>
                     <img src={require('../../media/search.svg')} />  
-                <input
+                    <input
                     type="text"
                     placeholder="Search"
                     value={this.state.searchTerm}
                     onChange={this.handleChange}
-                    />
+                    />        
                 </form>
                 <div className="customer-cards">
                     {this.state.customers.map((customer, index) => {

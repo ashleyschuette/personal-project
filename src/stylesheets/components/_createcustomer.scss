@@ -1,0 +1,26 @@
+.new-customer-content {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.input-border {
+    @include width-height(35%, auto);
+    border-bottom: 1px solid $darkgray;
+    margin-right: 20px;
+}
+
+.first-last-name {
+    display: flex;
+}
+
+.email-phone {
+    display: flex;
+}
+
+.street-city {
+    display: flex;
+}
+
+.state-zip {
+    display: flex;
+}

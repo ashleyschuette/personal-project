@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './stylesheets/main.css';
-// import store from './store';
+import store from './store';
 
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
     <BrowserRouter>
-     {/* <Provider store={store}>  */}
+      <Provider store={store}>  
         <App />
-     {/* </Provider>  */}
+      </Provider>  
     </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();

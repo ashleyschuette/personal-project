@@ -14,11 +14,12 @@ import CreateCustomer from './components/admin/CreateCustomer';
 import CustomerInvoice from './components/admin/CustomerInvoice';
 import CreateInvoice from './components/admin/CreateInvoice';
 import Invoices from './components/admin/Invoices';
+import Welcome from './components/welcome'
 
 export default (
     <Switch>
         <Route component={SignIn} path="/signin" />
-
+        <Route component={Welcome} path="/welcome" />
         <Route component={CustomerInvoices} path="/invoices/:id" />
         
         <Route component={InvoiceDetails} path="/details/:id" />

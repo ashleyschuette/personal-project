@@ -64,7 +64,8 @@ app.get('/auth', passport.authenticate('auth0'));
 
 app.get('/auth/callback',
     passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/' // url determines if the user is admin or customer
+        successRedirect: 'http://localhost:3000/welcome'
+     // url determines if the user is admin or customer
     }))
 
 app.get('/auth/me', function (req, res) {
@@ -96,6 +97,8 @@ app.post('/api/createinvoice/:id', customerController.postNewInvoice)
 app.get('/api/invoices', customerController.getAllInvoices)
 // Get specific customer invoice details 
 app.get('/api/invoice/details/:id', customerController.getInvoiceDetails)
+app.get('/api/search', customerController.searchInvoices)
+
 
 
 //Get user specific invoices

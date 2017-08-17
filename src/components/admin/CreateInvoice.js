@@ -145,22 +145,24 @@ export default class CreateInvoice extends Component {
                     <h1 className="component-header">Create New Invoice</h1>
                     <div className="new-invoice-content">
                 <div className="inline-inputs">
-                <h3 className="label">Date</h3>
+                <h3 className="bold-label">Date</h3>
                 <input className="bottom-line date-font" onChange={this.dateonChange} type="date" />
                     </div>
                 <div className="type-quantity">    
                 <div>
-                <h3 className="label">Type</h3>
+                                <h3 className="bold-label">Type</h3>
+                <div className="select-dropdown">               
                 <select onChange={this.workTypeonChange}>
-                    <option>Select</option>
+                    <option>SELECT</option>
                     <option value="Upholstery">Upholstery</option>
                     <option value="Refinishing">Refinishing</option>
-                        </select>
+                </select>
+                </div>             
                 </div>  
-                <div className="quantity-select">        
-                <h3 className="label">Quantity</h3>
+                <div className="select-dropdown quantity-select">        
+                <h3 className="bold-label">Quantity</h3>
                 <select onChange={this.quantityonChange}>
-                    <option>Select</option>
+                    <option>SELECT</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -171,18 +173,17 @@ export default class CreateInvoice extends Component {
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
-                            </select>
-                   
+                </select>
                 </div>  
                 <div className="type-line">        
                 <input onChange={this.furnitureTypeonChange} placeholder="Furniture Type" />
                 </div>
                 </div> 
                 <div className="invoice-fabric-container"> 
-                <div>       
-                <h3 className="label">Invoice</h3>
+                <div className="invoice-money-container">       
+                <h3 className="bold-label">Invoice</h3>
                 <div className="inline-inputs">  
-                <h4 className="label">Labor $</h4>
+                <h4 className="label ">Labor $</h4>
                 <input className="bottom-line" onChange={this.laborCostonChange} />
                 </div>  
                 <div className="inline-inputs">     
@@ -199,17 +200,17 @@ export default class CreateInvoice extends Component {
                             </div>
                 </div>  
                 <div className="fabric-container">       
-                <h3 className="label">Fabric</h3>    
-                <input onChange={this.fabricBrandonChange} placeholder="Fabric Brand" />
-                <input onChange={this.fabricPatternonChange} placeholder="Pattern" />
-                <input onChange={this.fabricColoronChange} placeholder="Color" />
-                <input onChange={this.yardsonChange} placeholder="Yards" />
+                <h3 className="bold-label">Fabric</h3>    
+                <input className="create-invoice-input" onChange={this.fabricBrandonChange} placeholder="Fabric Brand" />
+                <input className="create-invoice-input" onChange={this.fabricPatternonChange} placeholder="Pattern" />
+                <input className="create-invoice-input" onChange={this.fabricColoronChange} placeholder="Color" />
+                <input className="create-invoice-input" onChange={this.yardsonChange} placeholder="Yards" />
                 </div> 
                 </div>        
-                <h3 className="label notes-label">Notes</h3>
-                <input className="notes-container" onChange={this.notesonChange}/>
-                <button onClick={this.onSave}>SAVE</button>
-                </div> 
+                <h3 className="bold-label notes-label">Notes</h3>
+                <textarea className="notes-container" onChange={this.notesonChange}/>
+                <button className="save-button" onClick={this.onSave}>SAVE</button>
+                </div>
                 </div>
             </div>    
         )

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 export default class InvoiceCard extends Component {
     render() {
         return (
+            <div className="customer-invoice-link">
             <Link to={'/details/2'}>
             <div className="customer-invoice-card">
                 <div className="invoice-card-image">
@@ -24,7 +25,8 @@ export default class InvoiceCard extends Component {
                     </div>    
             </div>
             </div>
-            </Link>    
+            </Link>  
+            </div>    
         );
     }
 }

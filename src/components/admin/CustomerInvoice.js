@@ -39,7 +39,7 @@ export default class CustomerInvoice extends Component {
                                 furnitureType={customer.furniture_type}
                                 workType={customer.work_type}
                                 quantity={customer.quantity}
-                                total={customer.total} />
+                                total={'$'+customer.total} />
                         })}
                     </div>
                      <div className="add-button">

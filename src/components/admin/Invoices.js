@@ -31,10 +31,10 @@ export default class Invoices extends Component {
 
     onSearchSubmit(event) {
         event.preventDefault();
-        var searchArray = this.state.searchTerm.split(' ');
-        var firstName = searchArray[0];
-        var lastName = searchArray[1];
-        axios.get(`/api/invoices?firstName=${firstName}&lastName=${lastName}`)
+        // var searchArray = this.state.searchTerm.split(' ');
+        // var firstName = searchArray[0];
+        // var lastName = searchArray[1];
+        axios.get(`/api/search?firstName=${this.state.searchTerm}&lastName=${this.state.searchTerm}`)
             .then((customers) => this.setState({ searchTerm: '', customers: customers.data }))
             .catch(err => console.log(err));
     }
@@ -65,7 +65,7 @@ export default class Invoices extends Component {
                                 furnitureType={customer.furniture_type}
                                 workType={customer.work_type}
                                 quantity={customer.quantity}
-                                total={customer.total} />
+                                total={'$'+customer.total} />
                         })}
                     </div>    
                     <div className="add-button">
