@@ -14,8 +14,9 @@ export default class InvoiceDetails extends Component {
        
     }
 
-     componentDidMount() {
-         axios.get('/api/invoice/details/2')
+    componentDidMount() {
+         console.log(this.props, this.props.match.params.id);
+         axios.get(`/api/details/${this.props.match.params.id}`)
              .then((customers) => this.setState({ customers: customers.data }))
              .catch(err => console.log(err));
         }

@@ -12,7 +12,6 @@ class Welcome extends Component {
     componentDidMount() {
         axios.get('/auth/me')
         .then(res => {
-            console.log(res)
             this.props.getStatus(res.data.admin)
         })
     }

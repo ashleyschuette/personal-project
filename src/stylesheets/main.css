@@ -75,12 +75,11 @@ a {
   .adminNAV .customers-link {
     width: 100%;
     height: 40px;
-    padding: 1px 0px 1px;
-    background: #33bdb3; }
+    padding: 1px 0px 1px; }
     .adminNAV .customers-link img {
       margin: 20px; }
   .adminNAV .customers-link:hover {
-    background: #33bdb3; }
+    background-color: #33bdb3; }
   .adminNAV .invoices-link {
     width: 100%;
     height: 40px;
@@ -88,6 +87,12 @@ a {
     .adminNAV .invoices-link img {
       margin: 20px; }
   .adminNAV .invoices-link:hover {
+    background: #33bdb3; }
+  .adminNAV .signout-link {
+    width: 96%;
+    height: 40px;
+    padding: 1px 0px 1px 10px; }
+  .adminNAV .signout-link:hover {
     background: #33bdb3; }
   .adminNAV div {
     font-family: "Nunito", sans-serif;
@@ -97,6 +102,8 @@ a {
     align-items: center; }
   .adminNAV a {
     color: #fff; }
+  .adminNAV a:active {
+    background-color: #33bdb3; }
 
 .component-content {
   margin-left: 17%; }
@@ -473,21 +480,22 @@ input {
 
 .signin-container {
   width: 35%;
-  height: 95%;
+  height: 20%;
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
-  top: 50%;
+  top: 0;
   right: 0;
-  margin-right: 20px;
-  transform: translate(0%, -50%);
-  border: 5px solid #fff; }
+  margin-top: 20px;
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  border-left: 5px solid #fff; }
 
 .signin-header {
   font-family: "Playfair Display", serif;
   font-size: 40px;
   letter-spacing: 2px;
   color: #fff;
-  margin: 40px 0 0 40px; }
+  margin: 15px 0 0 40px; }
 
 .signin-subhead {
   color: #fff;

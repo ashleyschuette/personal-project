@@ -30,7 +30,7 @@
     .customers-link {
         @include width-height(100%, 40px);
         padding: 1px 0px 1px;
-        background: $teal;
+        // background: $teal;
 
         img {
             margin: 20px;
@@ -38,7 +38,7 @@
     }
 
     .customers-link:hover {
-        background: $teal;
+        background-color: $teal;
     }
 
     .invoices-link {
@@ -55,6 +55,17 @@
         background: $teal;
     }
 
+    
+
+    .signout-link {
+        @include width-height(96%, 40px);
+        padding: 1px 0px 1px 10px;
+    }
+
+    .signout-link:hover {
+        background: $teal;
+    }
+
     div {
         font-family: $nunito;
         font-size: 15px;
@@ -63,8 +74,12 @@
         align-items: center;
     }
 
-    a {
+    a{
         color: #fff;
+    }
+
+    a:active {
+        background-color: $teal;
     }
 
 }

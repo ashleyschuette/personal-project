@@ -40,6 +40,7 @@ export default class Invoices extends Component {
     }
     
     render() {
+        console.log('this is the customers array', this.state.customers)
           return (
             <div>
                 <AdminNAV />
@@ -55,9 +56,10 @@ export default class Invoices extends Component {
                     />
                 </form>
                 <div className="customer-cards">
-                    {this.state.customers.map((customer, index) => {
-                            return <InvoiceCard
+                          {this.state.customers.map((customer, index) => {                                
+                            return <InvoiceCard 
                                 key={index}
+                                id={customer.customerid}
                                 imageurl={customer.imageurl}
                                 date={customer.creation_date}
                                 firstName={customer.first_name}
@@ -69,7 +71,7 @@ export default class Invoices extends Component {
                         })}
                     </div>    
                     <div className="add-button">
-                    <Link to={'/createinvoice/:id'}>
+                    <Link to={`/createinvoice/${this.props.match.params.id}`}>
                     <button>
                         <img src={require('../../media/add.svg')} />            
                     </button>

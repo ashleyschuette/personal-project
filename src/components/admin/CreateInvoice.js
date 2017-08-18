@@ -118,7 +118,7 @@ export default class CreateInvoice extends Component {
     }
 
     onSave() {
-        axios.post('/api/createinvoice/2', {
+        axios.post(`/api/createinvoice/${this.props.match.params.id}`, {
             date: this.state.date,
             workType: this.state.workType,
             quantity: parseInt(this.state.quantity),

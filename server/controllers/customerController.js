@@ -15,7 +15,7 @@ module.exports = {
         const { id, admin } = req.params
 
         db.findAdminStatus([req.user.id, req.user.admin]).then((user) => {
-            console.log('found admin', user)
+            // console.log('found admin', user)
 
             if (user[0].admin) {
                 db.get_allInvoices()
@@ -25,9 +25,7 @@ module.exports = {
             } else {
                 db.get_UserInvoices([req.user.id])
                     .then((customers) => {
-                        customers[0].first_name = user[0].first_name
-                        customers[0].last_name = user[0].last_name
-                        console.log('found customer', customers)
+                        // console.log('found customer', customers)
 
                         res.status(200).send(customers)
                     })
@@ -68,6 +66,8 @@ module.exports = {
         .catch(err => res.status(500).send(err))
         }
     },
+
+    //Locate this change 
     
 
     getCustomer: (req, res, next) => {
@@ -88,9 +88,11 @@ module.exports = {
     getCustomerInvoice: (req, res, next) => {
         const db = req.app.get('db');
 
-        const {id} = req.params
+        const { id } = req.params;
+        
 
         db.get_customerInvoice([id])
+        
             .then((customers) => {
             res.status(200).send(customers)
         })
@@ -100,12 +102,14 @@ module.exports = {
         const db = req.app.get('db');
 
         const { id } = req.params
-
+        console.log(id, req.params)
+        
         db.get_invoiceDetails([id])
             .then((customers) => {
+                console.log(customers)
                 res.status(200).send(customers)
             })
-    }, 
+    },
 
     postNewCustomer: (req, res, next) => {
         const db = req.app.get('db')

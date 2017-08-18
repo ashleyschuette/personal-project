@@ -75,7 +75,7 @@ app.get('/auth/me', function (req, res) {
 
 app.get('/auth/logout', function (req, res) {
     req.logout();
-    res.redirect('http://localhost:3000/signin') // change this to the sign in route
+    res.redirect ('http://localhost:3000/signin') // change this to the sign in route
 })
 
 // Database
@@ -97,7 +97,7 @@ app.post('/api/createinvoice/:id', customerController.postNewInvoice)
 app.get('/api/invoices', customerController.getAllInvoices)
 // Get specific customer invoice details 
 
-app.get('/api/invoice/details/:id', customerController.getInvoiceDetails)
+app.get('/api/details/:id', customerController.getInvoiceDetails)
 app.get('/api/search', customerController.searchInvoices)
 
 

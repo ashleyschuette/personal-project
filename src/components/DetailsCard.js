@@ -4,7 +4,6 @@ import Payment from './Payment';
 
 export default class DetailsCard extends Component {
     render() {
-        console.log(this.props)
         return (
             <div >
                 <div className="invoice-detail-content">

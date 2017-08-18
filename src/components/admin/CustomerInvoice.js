@@ -14,7 +14,7 @@ export default class CustomerInvoice extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/customer/2')
+        axios.get(`/api/customer/${this.props.match.params.id}`)
             .then((customers) => this.setState({ customers: customers.data }))
             .catch(err => console.log(err));
     }
@@ -25,13 +25,15 @@ export default class CustomerInvoice extends Component {
                 <div>
                     <AdminNAV />
                     <div className="component-content">
-                       <h1 className="component-header"> CUSTOMER NAME HERE </h1>   
+                       <h1 className="component-header"> Customer name here </h1>   
                      
                         <div className="customer-cards">
                         {this.state.customers.map((customer, index) => {
+                            
                             // add money data type together console.log(Number(customer.labor_cost.replace('$', '')) + Number(customer.supplies_cost.replace('$', '')) + Number(customer.foam_cost.replace('$', '')) + Number(customer.fabric_cost.replace('$', '')))
                             return <InvoiceCard
                                 key={index}
+                                id={customer.customerid}
                                 imageurl={customer.imageurl}
                                 date={customer.creation_date}
                                 firstName={customer.first_name}
@@ -43,7 +45,7 @@ export default class CustomerInvoice extends Component {
                         })}
                     </div>
                      <div className="add-button">
-                    <Link to={'/createinvoice/2'}>
+                    <Link to={`/createinvoice/${this.props.id}`}>
                     <button>
                         <img src={require('../../media/add.svg')} />             
                     </button>

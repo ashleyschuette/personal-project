@@ -136,8 +136,3 @@ export default class CreateCustomer extends Component {
         )
     }
 }
-
-
-// Linking to another component
-// <link to={'path'}>NAME OF LINK</Link>
-// import {Link} from 'react-router-dom'
