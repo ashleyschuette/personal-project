@@ -66,8 +66,7 @@ module.exports = {
         .catch(err => res.status(500).send(err))
         }
     },
-
-    //Locate this change 
+ 
     
 
     getCustomer: (req, res, next) => {
