@@ -101,7 +101,6 @@ module.exports = {
         const db = req.app.get('db');
 
         const { id } = req.params
-        console.log(id, req.params)
         
         db.get_invoiceDetails([id])
             .then((customers) => {
@@ -125,6 +124,16 @@ module.exports = {
 
         const {workType, furnitureType, quantity, laborCost, suppliesCost, foamCost, fabricCost, fabricBrand, fabricPattern, fabricColor, yards, notes, date } = req.body;
         db.create_customerInvoice([2, workType, furnitureType, quantity, laborCost, suppliesCost, foamCost, fabricCost, fabricBrand, fabricPattern, fabricColor, yards, notes, date, laborCost+suppliesCost+foamCost+fabricCost])
+            .then(() => res.status(200).json())
+            .catch(() => res.status(500).json())
+    },
+    
+      updatePaidInvoice: (req, res, next) => {
+        const db = req.app.get('db');
+
+        const { invoiceid } = req.params
+        
+        db.update_paidInvoice([invoiceid])
             .then(() => res.status(200).json())
             .catch(() => res.status(500).json())
     }

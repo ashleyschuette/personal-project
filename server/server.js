@@ -51,12 +51,10 @@ app.use(passport.session())
 app.use(cors());
 
 passport.serializeUser(function (profileToSession, done) {
-    console.log('serialize', profileToSession)
   done(null, profileToSession); // puts second arguement(profiletosession) on session
 });
 
 passport.deserializeUser(function(profileFromSession, done) { // profilefromsession is value from session
-    console.log(profileFromSession);
     done(null, profileFromSession);
 });
         
@@ -105,6 +103,8 @@ app.get('/api/search', customerController.searchInvoices)
 //Get user specific invoices
 const userController = require('./controllers/userController');
 app.get('/api/invoices/:id', userController.getUserInvoices)
+// Updates invoice total to $0
+app.put('./api/payment/:invoiceid', userController.updatePaidInvoice)
 
 
 //Stripe

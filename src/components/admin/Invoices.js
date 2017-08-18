@@ -40,7 +40,6 @@ export default class Invoices extends Component {
     }
     
     render() {
-        console.log('this is the customers array', this.state.customers)
           return (
             <div>
                 <AdminNAV />

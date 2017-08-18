@@ -9,7 +9,6 @@ const initialState = {
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case 'STATUS': { 
-            console.log('this state is now returning',action.payload)
             return {
                 ...state, currentUser_status: action.payload
             }

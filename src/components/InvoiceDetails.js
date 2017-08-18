@@ -15,7 +15,6 @@ export default class InvoiceDetails extends Component {
     }
 
     componentDidMount() {
-         console.log(this.props, this.props.match.params.id);
          axios.get(`/api/details/${this.props.match.params.id}`)
              .then((customers) => this.setState({ customers: customers.data }))
              .catch(err => console.log(err));
@@ -30,6 +29,7 @@ export default class InvoiceDetails extends Component {
                 {this.state.customers.map((customer, index) => {
                     return <DetailsCard
                         key={index}
+                        invoiceid={customer.invoice_id}
                         imageurl={customer.imageurl}
                         date={customer.creation_date}
                         quantity={customer.quantity}

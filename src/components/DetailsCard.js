@@ -76,7 +76,8 @@ export default class DetailsCard extends Component {
                 </div> 
                   <div>           
                     <Payment
-                        total={this.props.total}/>            
+                                    total={this.props.total}
+                                    invoiceid={this.props.invoiceid}/>            
                 </div>            
                 </div>        
                 </div>
