@@ -50,7 +50,7 @@ export default class Customers extends Component {
                 <div className="component-header"><h1> Customers </h1></div>
                 <form onSubmit={this.onSearchSubmit}>
                     <img src={require('../../media/search.svg')} />  
-                    <input
+                    <input className="input-border"
                     type="text"
                     placeholder="Search"
                     value={this.state.searchTerm}

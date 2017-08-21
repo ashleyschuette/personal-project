@@ -134,7 +134,10 @@ module.exports = {
         const { invoiceid } = req.params
         
         db.update_paidInvoice([invoiceid])
-            .then(() => res.status(200).json())
+            .then((response) => { 
+                
+                res.status(200).json(true)
+            })
             .catch(() => res.status(500).json())
     }
 }

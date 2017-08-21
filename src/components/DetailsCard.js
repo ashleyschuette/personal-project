@@ -69,15 +69,15 @@ export default class DetailsCard extends Component {
                     </div>     
                 </div> 
                 <div className="amount-label">TOTAL
-                        <span className="amounts">{this.props.total}</span>
+                        <span className="amounts"> ${this.props.total}</span>
                             </div>
                 <div className="amount-due">Amount Due
                     <span className="amounts"> ${this.props.total}</span>            
                 </div> 
                   <div>           
                     <Payment
-                                    total={this.props.total}
-                                    invoiceid={this.props.invoiceid}/>            
+                        total={this.props.total}
+                        invoiceid={this.props.invoiceid} />            
                 </div>            
                 </div>        
                 </div>

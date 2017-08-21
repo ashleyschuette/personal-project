@@ -9,18 +9,31 @@
     margin-right: 20px;
 }
 
+.create-labels {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
 .first-last-name {
     display: flex;
+    margin-bottom: 40px;
 }
 
 .email-phone {
     display: flex;
+    margin-bottom: 60px;
 }
 
 .street-city {
     display: flex;
+    margin-bottom: 40px;
 }
 
 .state-zip {
     display: flex;
+    margin-bottom: 30px;
+}
+
+.create-save {
+    margin-left: 10px;
 }

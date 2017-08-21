@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AdminNAV from './AdminNAV';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 export default class CreateCustomer extends Component {
     constructor(props) {
@@ -111,7 +112,7 @@ export default class CreateCustomer extends Component {
                 <div className="component-content">
                     <div className="component-header"><h1> Create New Customer </h1></div>
                     <div className="new-customer-content">
-                    <h3 className="bold-label">Name</h3>
+                    <h3 className="bold-label create-labels">Name</h3>
                     <div className="first-last-name">
                         <input className="input-border" onChange={this.firstNameonChange} value={this.state.firstName} placeholder="FIRST NAME" />
                         <input className="input-border" onChange={this.lastNameonChange} value={this.state.lastName} placeholder="LAST NAME" />
@@ -120,7 +121,7 @@ export default class CreateCustomer extends Component {
                         <input className="input-border" onChange={this.emailonChange} value={this.state.email} placeholder="EMAIL" />
                         <input className="input-border" onChange={this.phoneonChange} value={this.state.phone} placeholder="PHONE" />
                     </div>
-                    <h3 className="bold-label">Address</h3>
+                    <h3 className="bold-label create-labels">Address</h3>
                     <div className="street-city">
                         <input className="input-border" onChange={this.addressonChange} value={this.state.address} placeholder="STREET" />
                         <input className="input-border" onChange={this.cityonChange} value={this.state.city} placeholder="CITY" />
@@ -128,8 +129,10 @@ export default class CreateCustomer extends Component {
                     <div className="state-zip">
                         <input className="input-border" onChange={this.stateonChange} value={this.state.state} placeholder="STATE" />
                         <input className="input-border" onChange={this.zipcodeonChange} value={this.state.zipcode} placeholder="ZIP CODE" />
-                    </div>
-                    <button className="input-border" className="save-button" onClick={this.onSave}>SAVE</button>    
+                        </div>
+                    <Link to={'/customers'}>   
+                    <button className="input-border" className="save-button create-save" onClick={this.onSave}>SAVE</button>    
+                    </Link>
                     </div> 
                 </div>    
             </div>    

@@ -31,9 +31,6 @@ export default class Invoices extends Component {
 
     onSearchSubmit(event) {
         event.preventDefault();
-        // var searchArray = this.state.searchTerm.split(' ');
-        // var firstName = searchArray[0];
-        // var lastName = searchArray[1];
         axios.get(`/api/search?firstName=${this.state.searchTerm}&lastName=${this.state.searchTerm}`)
             .then((customers) => this.setState({ searchTerm: '', customers: customers.data }))
             .catch(err => console.log(err));
@@ -47,7 +44,7 @@ export default class Invoices extends Component {
                 <div className="component-header"><h1> Invoices </h1></div>
                 <form onSubmit={this.onSearchSubmit}>
                     <img src={require('../../media/search.svg')} />  
-                <input
+                <input className="input-border"
                     type="text"
                     placeholder="Search"
                     value={this.state.searchTerm}
@@ -55,10 +52,11 @@ export default class Invoices extends Component {
                     />
                 </form>
                 <div className="customer-cards">
-                          {this.state.customers.map((customer, index) => {                                
+                          {this.state.customers.map((customer, index) => {  
                             return <InvoiceCard 
                                 key={index}
                                 id={customer.customerid}
+                                paid={customer.paid}
                                 imageurl={customer.imageurl}
                                 date={customer.creation_date}
                                 firstName={customer.first_name}

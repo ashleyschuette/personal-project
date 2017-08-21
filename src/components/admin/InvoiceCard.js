@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class InvoiceCard extends Component {
+   
+
     render() {
         
         return (
             <div className="customer-invoice-link">
             <Link to={`/details/${this.props.id}`}>
-            <div className="customer-invoice-card">
+                    <div className="customer-invoice-card">
+                        <div className="paid-tag">{!this.props.paid ? 'Unpaid' : 'Paid'}</div>        
                 <div className="invoice-card-image">
                     <img style={{height: '100%', position: 'absolute', left: '50%', transform: 'translate(-50%, 0%'}} src={this.props.imageurl} />
                 </div>

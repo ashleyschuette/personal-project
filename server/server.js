@@ -98,13 +98,13 @@ app.get('/api/invoices', customerController.getAllInvoices)
 app.get('/api/details/:id', customerController.getInvoiceDetails)
 app.get('/api/search', customerController.searchInvoices)
 
-
+// Updates invoice total to $0
+app.put('/api/payment/:invoiceid', customerController.updatePaidInvoice)
 
 //Get user specific invoices
 const userController = require('./controllers/userController');
 app.get('/api/invoices/:id', userController.getUserInvoices)
-// Updates invoice total to $0
-app.put('./api/payment/:invoiceid', userController.updatePaidInvoice)
+
 
 
 //Stripe

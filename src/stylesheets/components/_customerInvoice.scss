@@ -6,6 +6,23 @@
     display: flex;
 }
 
+.paid-tag {
+    position: absolute;
+    z-index: 999999;
+    margin-top: 15px;
+    background: $teal;
+    color: $darkgray;
+    padding: 5px;
+    width: 70px;
+    margin-left: -15px;
+    text-align: center;
+    font-family: $nunito;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 .invoice-card-image {
     width: 60%;
     overflow: hidden;

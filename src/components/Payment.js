@@ -7,6 +7,10 @@ export default class Payment extends Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            isPaid: false
+        }
+
     }
 
     onToken = (token) => {
@@ -16,9 +20,12 @@ export default class Payment extends Component {
                 console.log(response)
                 if (response.data === "OK") {
                     axios.put(`/api/payment/${this.props.invoiceid}`)
-                        .then(response => console.log(response))
+                        .then(invoiceResponse => {
+                            console.log(invoiceResponse)
+                        })
                         .catch(err => console.log(err));
                     alert('Thank you for your payment')
+                    
                 }
         });
     }

@@ -11,7 +11,6 @@ export default class InvoiceDetails extends Component {
             customers: []
         }
 
-       
     }
 
     componentDidMount() {
@@ -25,7 +24,7 @@ export default class InvoiceDetails extends Component {
             <div>
                 <AdminNAV />
                 <div className="component-content">
-                    <div className="component-header"><h1> Furniture Type Here </h1></div>    
+                    <div className="component-header"><h1> {this.props.furnitureType} </h1></div>    
                 {this.state.customers.map((customer, index) => {
                     return <DetailsCard
                         key={index}
