@@ -20,12 +20,12 @@ export default class CustomerInvoice extends Component {
     }
 
 
-        render() {
+    render() {
             return (
                 <div>
                     <AdminNAV />
                     <div className="component-content">
-                       <h1 className="component-header"> Customer name here </h1>   
+                        <h1 className="component-header"> </h1>   
                      
                         <div className="customer-cards">
                         {this.state.customers.map((customer, index) => {

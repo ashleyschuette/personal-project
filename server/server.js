@@ -10,6 +10,12 @@ const stripe = require('stripe')(keys.secret_key);
 
 const app = module.exports = express();
 
+app.use(express.static(`${__dirname}/../build`))
+
+app.use((req, res, next) => {
+    console.log(req.url);
+    next();
+})
 massive('postgres://nvcmqnobwchylz:9336669d8135ac4bad09d0e55bff551a5d02c65f78f45934765f84f01c31d494@ec2-54-227-237-223.compute-1.amazonaws.com:5432/d62o5e3mkq1n3a?ssl=true')
     .then(db => {
         app.set('db', db);
@@ -143,10 +149,17 @@ app.post('/api/payment', function(req, res, next){
   // if (err && err.type === 'StripeCardError') {
   //   // The card has been declined
   // }
-});
+    });
 });
  
-    
+
+
+const path = require('path');
+
+app.get('/*', (req, res) => {
+    console.log(req.url);
+    res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+})
     
 app.listen(3001, () => {
     console.log('Listening on port 3001');
